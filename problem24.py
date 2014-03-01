@@ -1,10 +1,8 @@
-from itertools import permutations, islice, takewhile, count
+from itertools import takewhile, count
 from math import factorial
 
 
-def nth(iterable, n, default=None):
-    "Returns the nth item or a default value"
-    return next(islice(iterable, n, None), default)
+
 
 
 PERMS = 1000000 - 1
