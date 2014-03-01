@@ -1,7 +1,6 @@
 from functools import reduce
 from itertools import combinations, count, islice
 import operator
-from problem21 import gen_div_sum_table
 
 
 def multiply(iterable):
@@ -71,3 +70,15 @@ def take(n, iterable):
 
 def triangle_number(n):
     return (n * (n + 1)) // 2
+
+
+def gen_div_sum_table(up_to):
+    table = range(up_to)
+    for i, n in enumerate(table):
+        table[i] = sum_proper_divisors(n)
+
+    return table
+
+
+def sum_proper_divisors(number):
+    return sum(get_proper_divisors(number))
